@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	#rm{
+		border: none;
+	}
+</style>
+	<title>Random</title>
+	<meta charset="utf-8">
+</head>
+<body>
+    <input type="text" id="name" placeholder="adınız"> <p>
+    <input type="text" id="surname" placeholder="soyadınız"> <p>
+	<input type="text" id="rm">
+	<input type="text" id="add" placeholder="şəkildəki əməliyyatı daxil et"><p>
+	<input type="submit" id="send" value="Göndər">
+	<p id="text"></p>
+
+ <script>
+  var name =document.getElementById('name');
+  var surname =document.getElementById('surname');
+  var rm=document.getElementById('rm');
+  var add=document.getElementById('add');
+
+ 	var actions = ['+','-','*','/'];
+ 	var rand = Math.floor((Math.random()*3));
+ 	var rand2 = Math.floor((Math.random()*3));
+ 	var rand3 = Math.floor((Math.random()*3));
+ 	 var randd = Math.floor((Math.random()*20)+1);
+ 	 var randdd = Math.floor((Math.random()*20)+1);
+ 	 var randddd = Math.floor((Math.random()*20)+1); 	 
+ 	 var randdds = Math.floor((Math.random()*20)+1); 	 
+ 	document.getElementById("rm").value = randd + actions[rand] + randdd + actions[rand2] + randdds+actions[rand3]+randddd;
+ 	document.getElementById("send").addEventListener("click", send);
+    function send(){
+ 	if (rm.value ==  add.value){
+			document.getElementById("text").innerHTML = 'Məlumatlar eynidi';
+ 	}
+ 	else{
+ 	document.getElementById("text").innerHTML ='Bir daha cəhd edin, məlumatlar fərqlidir';
+ 	}
+ 	}
+ </script>
+</body>
+</html>
